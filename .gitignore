@@ -1,0 +1,8 @@
+.env
+data/
+vectorstore_db_google_streamlit/
+vectorstore_db_google/
+vectorstore_db_ollama/
+models/
+*.pdf
+venv/
