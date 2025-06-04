@@ -7,7 +7,7 @@ from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader, T
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_community.vectorstores import Chroma
+from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import ChatPromptTemplate #, PromptTemplate # Not needed if using default MultiQuery prompt
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
@@ -66,8 +66,8 @@ def load_rag_pipeline():
     # 4. Create Vector Store and Base Retriever
     # For a deployed app, you might persist the vector store more robustly or build it on startup.
     # Using a persisted directory for Chroma can save re-computation if data doesn't change.
-    vectorstore_directory = "vectorstore_db_google_streamlit" # Use a different dir if needed
-    vectorstore = Chroma.from_documents(documents=chunks, embedding=embeddings_model, persist_directory=vectorstore_directory)
+    # vectorstore_directory = "vectorstore_db_google_streamlit" # Not needed for FAISS
+    vectorstore = FAISS.from_documents(documents=chunks, embedding=embeddings_model)
     
     base_retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={'k': 3})
 
