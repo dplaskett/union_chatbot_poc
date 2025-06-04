@@ -1,0 +1,18 @@
+# Streamlit for UI
+streamlit
+
+# LangChain core and community modules
+langchain
+langchain-community
+langchain-core
+langchain-google-genai
+langchain-text-splitters
+
+# Chroma vector store
+chromadb
+
+# PDF parsing (used by PyPDFLoader)
+pypdf
+
+# (Optional) dotenv if you want to use .env files
+# python-dotenv 
