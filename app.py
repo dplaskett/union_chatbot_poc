@@ -15,8 +15,10 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain.retrievers.multi_query import MultiQueryRetriever
 
 # --- 0. Load Environment Variables ---
-load_dotenv()
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+# load_dotenv()
+# GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 
 if not GOOGLE_API_KEY:
     # For Streamlit Cloud, you'd set secrets there, not via .env

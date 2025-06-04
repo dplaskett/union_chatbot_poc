@@ -6,3 +6,4 @@ vectorstore_db_ollama/
 models/
 *.pdf
 venv/
+.streamlit/secrets.toml
