@@ -14,5 +14,8 @@ chromadb
 # PDF parsing (used by PyPDFLoader)
 pypdf
 
+# Protocol Buffers compatibility (required for some dependencies)
+protobuf==3.20.*
+
 # (Optional) dotenv if you want to use .env files
 # python-dotenv 
